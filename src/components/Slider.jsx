@@ -1,31 +1,41 @@
-import { useState, useEffect } from 'react';
-const Slider = () => {
-const [currentIndex, setCurrentIndex] = useState(0);
-const slides = [
-    <>
-      <img src="/1.HEIC" alt="image" />
-      <img src="/2.JPEG" alt="image" />
-      <img src="/3.JPEG" alt="image" />
-      <img src="/4.JPEG" alt="image" />
-      <img src="/5.JPEG" alt="image" />
-      <img src="/6.JPEG" alt="image" />
-      <img src="/7.JPEG" alt="image" />
-      <img src="/8.JPEG" alt="image" />
-      <img src="/9.JPEG" alt="image" />
-      <img src="/10.HIEC" alt="image" />
-      <img src="/11.JPEG" alt="image" />
-      <img src="/12.JPEG" alt="image" />
-      <img src="/13.JPEG" alt="image" />
-    </>
-  ];
-  return (
-    <>
-      <div className="min-h-screen flex flex-col bg-black text-white">
-        
-        <div ></div>
-      </div>
-    </>
-  )
-}
+"use client";
+import { useState, useEffect } from "react";
 
-export default Slider
+const Slider = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const slides = [
+    "/images/slideshow/2.JPEG",
+    "/images/slideshow/3.JPEG",
+    "/images/slideshow/4.JPEG",
+    "/images/slideshow/5.JPEG",
+    "/images/slideshow/6.JPEG",
+    "/images/slideshow/7.JPEG",
+    "/images/slideshow/8.JPEG",
+    "/images/slideshow/9.JPEG",
+    "/images/slideshow/11.JPEG",
+    "/images/slideshow/12.JPEG",
+    "/images/slideshow/13.JPEG",
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === slides.length - 1 ? 0 : prev + 1
+      );
+    }, 2000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="w-full min-h-screen overflow-hidden bg-black">
+      <img
+        src={slides[currentIndex]}
+        alt="slideshow"
+        className="w-full h-full object-cover transition-opacity duration-700"
+      />
+    </div>
+  );
+};
+
+export default Slider;
