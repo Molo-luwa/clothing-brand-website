@@ -5,6 +5,7 @@ const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
+    "/images/slideshow/1.jpg",
     "/images/slideshow/2.JPEG",
     "/images/slideshow/3.JPEG",
     "/images/slideshow/4.JPEG",
@@ -13,6 +14,7 @@ const Slider = () => {
     "/images/slideshow/7.JPEG",
     "/images/slideshow/8.JPEG",
     "/images/slideshow/9.JPEG",
+    "/images/slideshow/10.jpg",
     "/images/slideshow/11.JPEG",
     "/images/slideshow/12.JPEG",
     "/images/slideshow/13.JPEG",
@@ -28,7 +30,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen overflow-hidden bg-black">
+    <div className="w-full h-200 overflow-hidden bg-black">
       <img
         src={slides[currentIndex]}
         alt="slideshow"
