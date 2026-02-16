@@ -1,11 +1,23 @@
 import { useState } from 'react'
 import { motion, MotionConfig, AnimatePresence } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { Search, ShoppingBag } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Search, ShoppingBag, X } from 'lucide-react'
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+  
   const closeMenu = () => setActive(false);
+
+  const handleSearch = (e) => {
+    if (e.key === 'Enter' && searchQuery.trim()) {
+      navigate(`/shop?search=${searchQuery.toLowerCase()}`);
+      setSearchOpen(false);
+      setSearchQuery("");
+    }
+  };
 
   return (
     <>
@@ -52,18 +64,38 @@ const Navbar = () => {
             </MotionConfig>
           </div>
 
-          {/* CENTER: LOGO - Points to Home (Slider) */}
           <div className="flex-1 flex justify-center">
             <Link to="/" onClick={closeMenu}>
               <h1 className="text-white text-3xl font-bold tracking-tighter uppercase italic">
-                <img src="/logo.png" alt="" className='w-20 h-20' />
+                ANTHO
               </h1>
             </Link>
           </div>
-
           {/* RIGHT: ICONS */}
-          <div className="flex-1 flex justify-end items-center gap-6 text-white">
-            <Search size={22} strokeWidth={1.5} className="cursor-pointer hover:opacity-70 transition-opacity" />
+          <div className="flex-1 flex justify-end items-center gap-6 text-white relative">
+            <AnimatePresence>
+              {searchOpen && (
+                <motion.input 
+                  initial={{ width: 0, opacity: 0 }}
+                  animate={{ width: 200, opacity: 1 }}
+                  exit={{ width: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute right-24 bg-zinc-900 border-b border-white outline-none px-2 py-1 text-xs italic font-bold text-white placeholder-zinc-500"
+                  placeholder="SEARCH..."
+                  autoFocus
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={handleSearch}
+                />
+              )}
+            </AnimatePresence>
+            
+            {searchOpen ? (
+              <X size={22} strokeWidth={1.5} className="cursor-pointer hover:opacity-70 transition-opacity" onClick={() => setSearchOpen(false)} />
+            ) : (
+              <Search size={22} strokeWidth={1.5} className="cursor-pointer hover:opacity-70 transition-opacity" onClick={() => setSearchOpen(true)} />
+            )}
+
             <Link to="/cart" onClick={closeMenu}>
               <ShoppingBag size={22} strokeWidth={1.5} className="hover:opacity-70 transition-opacity" />
             </Link>

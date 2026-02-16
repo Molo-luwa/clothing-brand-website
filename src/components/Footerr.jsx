@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Official SVG Paths from SimpleIcons.org
 const BrandIcons = {
   Snapchat: ({ size = 24 }) => (
     <svg role="img" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -29,7 +28,6 @@ const Footerr = () => {
     <footer className="bg-black text-white py-12 flex flex-col items-center justify-center">
       <div className="container mx-auto px-4 text-center">
         
-        {/* CONTACT SECTION */}
         <div className="mb-8">
           <h2 className="text-[11px] font-black italic tracking-[0.3em] uppercase mb-4 text-zinc-500">
             Contact Us
@@ -42,7 +40,6 @@ const Footerr = () => {
           </a>
         </div>
 
-        {/* SOCIAL ICONS (Using Simple Icons Paths) */}
         <div className="flex justify-center items-center gap-10 mb-12">
           <a href="https://snapchat.com/t/yXLe7p2I" target="_blank" rel="noreferrer" className="hover:opacity-50 transition-opacity">
             <BrandIcons.Snapchat size={22} />
@@ -59,13 +56,6 @@ const Footerr = () => {
           <a href="https://www.tiktok.com/@antho.syllogi" target="_blank" rel="noreferrer" className="hover:opacity-50 transition-opacity">
             <BrandIcons.TikTok size={22} />
           </a>
-        </div>
-
-        {/* BOTTOM SELECTOR */}
-        <div className="w-full flex justify-start border-t border-zinc-900 pt-8">
-          <select className="bg-transparent text-[10px] font-bold tracking-widest outline-none cursor-pointer uppercase">
-            <option className="bg-black">NGN ₦ | Nigeria</option>
-          </select>
         </div>
         
       </div>

@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
+import { useCart } from '../context/CartContext';
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
   const product = products.find((p) => p.id === id);
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState('M');
 
   if (!product) return <div className="pt-32 text-center bg-black text-white min-h-screen uppercase italic font-black">Product not found</div>;
 
+  const handleAddToCart = () => {
+    addToCart(product, quantity, selectedSize);
+    navigate('/cart');
+  };
+
   return (
     <div className="bg-black text-white min-h-screen pt-32 pb-20 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
         
-        {/* Left: Image Section - Using Zinc-900 to make product pop without a harsh white box */}
-        <div className="bg-zinc-900 flex justify-center items-center overflow-hidden rounded-sm aspect-square md:aspect-auto">
+        {/* Left: Image Section */}
+        <div className="flex justify-center items-center overflow-hidden rounded-sm aspect-square md:aspect-auto">
           <img 
             src={product.img} 
             alt={product.name} 
@@ -68,7 +76,10 @@ const ProductDetail = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-col gap-3 mt-4">
-            <button className="w-full bg-white text-black py-4 uppercase tracking-widest font-black italic text-sm hover:bg-zinc-200 transition-all">
+            <button 
+              onClick={handleAddToCart}
+              className="w-full bg-white text-black py-4 uppercase tracking-widest font-black italic text-sm hover:bg-zinc-200 transition-all"
+            >
               Add to cart
             </button>
             
