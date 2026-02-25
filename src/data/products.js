@@ -51,9 +51,10 @@ export const products = [
     name: "ANTHO GLOBAL TEE", 
     color: "BLACK", 
     price: "30,000", 
-    img: "/images/gridimg/global_tee_black.png",
+    img: "/images/global_black/global_black_BACK.png",
     images: [
-      "/images/gridimg/global_tee_black.png",
+      "/images/global_black/global_black_BACK.png",
+      "/images/global_black/front_glbl.png",
       "/images/global_black/IMG_6729.JPEG",
       "/images/global_black/IMG_6550.jpg",
       "/images/global_black/IMG_6693.JPEG",
