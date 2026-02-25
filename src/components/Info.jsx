@@ -36,7 +36,7 @@ const Info = () => {
         {/* Support Link */}
         <div className="mt-20">
           <a 
-            href="mailto:support@antho.com" 
+            href="mailto:antho.syllogi@gmail.com" 
             className="text-[10px] font-black italic uppercase tracking-widest border border-white/20 px-6 py-3 hover:bg-white hover:text-black transition-all duration-500"
           >
             Contact Support
