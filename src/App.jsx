@@ -6,6 +6,7 @@ import ProductGrid from './components/ProductGrid';
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart';
 import Info from './components/info';
+import Checkout from './components/Checkout.jsx';
 import Footerr from './components/Footerr.jsx';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/info" element={<Info />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </main>
 
