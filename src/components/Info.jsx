@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Info = () => {
+const Infoo = () => {
   return (
     <div className="bg-black text-white min-h-screen pt-32 pb-20 px-6">
       <div className="max-w-3xl mx-auto">
@@ -47,4 +47,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default Infoo;
