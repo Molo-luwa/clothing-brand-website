@@ -19,7 +19,7 @@ const Info = () => {
               Processing Time
             </p>
             <p className="text-lg md:text-xl font-bold tracking-tight leading-relaxed max-w-xl">
-              All orders are processed within <span className="text-zinc-400">5-7 business days</span> before they are sent out for delivery.
+              All orders are processed within <span className="text-zinc-400">10-14 business days</span> before they are sent out for delivery.
             </p>
           </section>
 
@@ -28,7 +28,7 @@ const Info = () => {
               Tracking
             </p>
             <p className="text-lg md:text-xl font-bold tracking-tight leading-relaxed">
-              Once your order has shipped, you will receive an email confirmation with your tracking information.
+              Once your order has been shipped, you will receive an email confirmation with your tracking information.
             </p>
           </section>
         </div>
