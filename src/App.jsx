@@ -5,7 +5,7 @@ import Slider from './components/Slider.jsx';
 import ProductGrid from './components/ProductGrid';
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart';
-import Info from './components/info';
+import Infoo from './components/Infoo.jsx';
 import Checkout from './components/Checkout.jsx';
 import Footerr from './components/Footerr.jsx';
 
@@ -20,7 +20,7 @@ function App() {
           <Route path="/shop" element={<ProductGrid />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/info" element={<Info />} />
+          <Route path="/info" element={<Infoo />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </main>
