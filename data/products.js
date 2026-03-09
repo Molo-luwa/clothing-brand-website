@@ -7,6 +7,6 @@ export const products = [
   { id: 'antho-babies-black', name: "ANTHO BABIES BLACK", color: "", price: "25,000", img: "https://placehold.co/400x600/white/black?text=Babies+Black" },
   { id: 'antho-npng-grey', name: "ANTHO NPNG SWEATS", color: "GREY", price: "25,000", img: "https://placehold.co/400x600/white/black?text=NPNG+Grey" },
   { id: 'antho-npng-black', name: "ANTHO NPNG SWEATS", color: "BLACK", price: "25,000", img: "https://placehold.co/400x600/white/black?text=NPNG+Black" },
-  { id: 'antho-99-polo', name: "ANTHO 99' POLO", color: "WHITE", price: "45,000", img: "https://placehold.co/400x600/white/black?text=99+Polo" },
+  { id: 'antho-99-polo', name: "ANTHO LEGENDARY POLO", color: "WHITE", price: "45,000", img: "https://placehold.co/400x600/white/black?text=99+Polo" },
   { id: 'antho-family-pack', name: "ANTHO FAMILY PACK", color: "PACK", price: "125,000", img: "https://placehold.co/400x600/white/black?text=Family+Pack" },
 ];
