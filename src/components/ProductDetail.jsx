@@ -37,16 +37,16 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen pt-32 pb-20 px-6">
+    <div className="bg-black text-white min-h-screen pt-0 md:pt-32 lg:pt-32 pb-20 ">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
         
         {/* Left: Image Section with Carousel */}
         <div className="flex flex-col">
-          <div className="relative w-full aspect-square md:aspect-auto overflow-hidden rounded-sm group">
+          <div className="relative w-full overflow-hidden rounded-sm group">
             <img 
               src={currentImage} 
               alt={product.name} 
-              className="w-full h-full object-contain transition-transform duration-700 hover:scale-105" 
+              className="w-full h-auto max-h-300px object-contain transition-transform duration-700 hover:scale-105 block" 
             />
 
             {images.length > 1 && (
@@ -87,7 +87,7 @@ const ProductDetail = () => {
           )}
         </div>
 
-        {/* Right: Info Section (unchanged) */}
+        {/* Right: Info Section */}
         <div className="flex flex-col gap-6">
           <header>
             <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter uppercase leading-none mb-2">
@@ -136,14 +136,13 @@ const ProductDetail = () => {
               Add to cart
             </button>
             
-            <button className="w-full bg-[#5A31F4] text-white py-4 font-black italic uppercase text-sm rounded-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-              Buy with <span className="not-italic font-bold tracking-tighter text-lg">shop</span>
+            <button 
+            onClick={() => navigate('/Checkout')}
+            className="w-full bg-[#5A31F4] text-white py-4 font-black italic uppercase text-sm rounded-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+            Buy with <span className="not-italic font-bold tracking-tighter text-lg">shop</span>
             </button>
           </div>
           
-          <p className="text-center text-[10px] text-zinc-500 underline tracking-widest uppercase cursor-pointer hover:text-white transition-colors">
-            More payment options
-          </p>
         </div>
       </div>
     </div>
