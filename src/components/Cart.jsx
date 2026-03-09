@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { Trash2, ArrowRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 const Cart = () => {
+    const navigate = useNavigate();
   const { cartItems, removeFromCart, updateQuantity } = useCart();
 
   const calculateTotal = () => {
@@ -51,7 +52,7 @@ const Cart = () => {
                     className="flex gap-6 border-b border-zinc-800 pb-6"
                   >
                     {/* Image */}
-                    <div className="w-24 h-24 bg-zinc-900 rounded-sm flex-shrink-0 flex items-center justify-center overflow-hidden">
+                    <div className="w-24 h-24 bg-zinc-900 rounded-sm shrink-0 flex items-center justify-center overflow-hidden">
                       <img 
                         src={item.img} 
                         alt={item.name} 
@@ -60,7 +61,7 @@ const Cart = () => {
                     </div>
 
                     {/* Details */}
-                    <div className="flex-grow">
+                    <div className="grow">
                       <h3 className="text-white font-black italic uppercase text-sm mb-1">
                         {item.name}
                       </h3>
@@ -132,7 +133,9 @@ const Cart = () => {
                   <span>₦{total.toLocaleString()}</span>
                 </div>
 
-                <button className="w-full bg-white text-black py-4 font-black italic uppercase text-sm hover:bg-zinc-200 transition-all mb-3">
+                <button
+                 onClick={() => navigate('/Checkout')}
+                 className="w-full bg-white text-black py-4 font-black italic uppercase text-sm hover:bg-zinc-200 transition-all mb-3">
                   Checkout
                 </button>
 
