@@ -152,7 +152,7 @@ const Checkout = () => {
               {cartItems.map((item) => (
                 <div key={`${item.id}-${item.selectedSize}`} className="flex gap-4 border-b border-zinc-800 pb-4">
                   <div className="w-16 h-20 bg-zinc-900 rounded-sm shrink-0">
-                    <img src={item.img} alt="" className="w-full h-full object-contain" />
+                    <img src={item.img} alt="" loading="lazy" className="w-full h-full object-contain" />
                   </div>
                   <div className="flex flex-col justify-center">
                     <h3 className="text-[10px] font-black leading-tight uppercase">{item.name}</h3>
