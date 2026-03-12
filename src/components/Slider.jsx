@@ -34,7 +34,6 @@ const Slider = () => {
       <img
         src={slides[currentIndex]}
         alt="slideshow"
-        loading="lazy"
         className="w-full h-full object-cover transition-opacity duration-700"
       />
     </div>
