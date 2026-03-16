@@ -42,7 +42,7 @@ const Footerr = () => {
 
         <div className="flex justify-center items-center gap-10 mb-12">
           <a href="https://snapchat.com/t/yXLe7p2I" target="_blank" rel="noreferrer" className="hover:opacity-50 transition-opacity">
-            <img src="/images/snap.png" alt="Snapchat" className="w-6 h-6" />
+            <img src="/snap.png" alt="Snapchat" className="w-6 h-6" />
           </a>
 
           <a href="https://x.com/syllogiantho?s=21" target="_blank" rel="noreferrer" className="hover:opacity-50 transition-opacity">
