@@ -22,7 +22,7 @@ export const products = [
     img: "/images/gridimg/black_prevails.png",
     images: [
       "/images/gridimg/black_prevails.png",
-      "/images/black_prevails/IMG_4911.PNG",
+      "/images/black_prevails/IMG_4911.jpg",
       "/images/black_prevails/IMG_6738.JPEG",
       "/images/black_prevails/IMG_6594.JPEG",
       "/images/black_prevails/IMG_6704.JPEG",
