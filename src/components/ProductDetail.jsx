@@ -46,7 +46,7 @@ const ProductDetail = () => {
             <img 
               src={currentImage} 
               alt={product.name} 
-              loading="lazy"
+              loading="eager"
               className="w-full h-auto max-h-300px object-contain transition-transform duration-700 hover:scale-105 block" 
             />
 
