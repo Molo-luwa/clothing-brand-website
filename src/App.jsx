@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 import Infoo from './components/Infoo.jsx';
 import Checkout from './components/Checkout.jsx';
 import Footerr from './components/Footerr.jsx';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       </main>
 
       <Footerr />
+      <Analytics />
     </div>
   )
 }
