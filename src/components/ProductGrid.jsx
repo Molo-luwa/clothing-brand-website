@@ -28,7 +28,7 @@ const ProductGrid = () => {
               <img 
                 src={product.img} 
                 alt={product.name} 
-                loading="lazy"
+                loading="eager"
                 className={`w-full h-full object-contain transition-all duration-700 ease-out
                   ${!product.isComingSoon && 'group-hover:scale-110 group-hover:rotate-3deg group-hover:brightness-110'}`}
               />
