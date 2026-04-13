@@ -56,7 +56,7 @@ const Checkout = () => {
     reference: (new Date()).getTime().toString(),
     email: formData.email,
     amount: total * 100, // Kobo
-    publicKey: import.meta.env.PAYSTACK_SECRET_KEY,
+    publicKey: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY,
     metadata: {
       firstName: formData.firstName,
       lastName: formData.lastName,
