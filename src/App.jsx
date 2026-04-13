@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
 import Navbar from './components/Navbar.jsx'
@@ -28,6 +29,7 @@ function App() {
 
       <Footerr />
       <Analytics />
+      <SpeedInsights/>
     </div>
   )
 }
